@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>708</width>
+    <width>634</width>
     <height>329</height>
    </rect>
   </property>
@@ -30,7 +30,7 @@
    <widget class="QPushButton" name="StopButton">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>490</x>
       <y>240</y>
       <width>75</width>
       <height>23</height>
@@ -43,7 +43,7 @@
    <widget class="QPushButton" name="StartButton">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>350</x>
       <y>240</y>
       <width>75</width>
       <height>23</height>
@@ -66,30 +66,27 @@
      <string>选择文件</string>
     </property>
    </widget>
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>59</x>
-      <y>59</y>
-      <width>201</width>
-      <height>141</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-   </widget>
    <widget class="QTextBrowser" name="ResultView">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>350</x>
       <y>60</y>
       <width>211</width>
       <height>141</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ImageLabel">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>60</y>
+      <width>221</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>图片</string>
     </property>
    </widget>
   </widget>
