@@ -2,6 +2,8 @@ import sys
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt5.uic import loadUi
+import eegAnalyze
+import sys
 
 qtCreatorFile = 'EEGAnalyze.ui'  # Window File
 
@@ -21,14 +23,18 @@ class MainWindow(QMainWindow):
         fname = QFileDialog.getOpenFileName(self, 'open file', '/')
         if fname[0]:
             self.FileText.setText(fname[0])
+            self.FileText.adjustSize()
             self.file = fname[0]
 
     def start_click(self):
-        self.ResultView.setPlainText('')
+        if self.file == '':
+            self.ResultView.setPlainText('请先选择文件再开始！')
+            return
         self.ResultView.setPlainText('分析开始')
+        res = eegAnalyze.test_Analyze(self.file)
+        self.setResult(res)
 
     def stop_click(self):
-        self.ResultView.setPlainText('')
         self.ResultView.setPlainText('停止分析')
 
     # 获取文件路径
