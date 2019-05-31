@@ -35,6 +35,10 @@ class MainWindow(QMainWindow):
     def get_file_path(self):
         return self.file
 
+    def setResult(self, str):
+        self.ResultView.setPlainText('分析完成')
+        self.ResultView.append(str)
+
 
 app = QApplication(sys.argv)
 w = MainWindow()
