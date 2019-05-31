@@ -17,23 +17,6 @@ class MainWindow(QMainWindow):
         self.ImageLabel.setScaledContents(True)
         self.file = ''
 
-        # 样式
-        self.SelectButton.setStyleSheet("QPushButton{color:black}"
-                                        "QPushButton:hover{color:red}"
-                                        "QPushButton{background-color:rgb(78,255,255)}"
-                                        "QPushButton{border:2px}"
-                                        "QPushButton{border-radius:10px}")
-        self.StartButton.setStyleSheet("QPushButton{color:black}"
-                                       "QPushButton:hover{color:red}"
-                                       "QPushButton{background-color:rgb(78,255,255)}"
-                                       "QPushButton{border:2px}"
-                                       "QPushButton{border-radius:10px}")
-        self.StopButton.setStyleSheet("QPushButton{color:black}"
-                                      "QPushButton:hover{color:red}"
-                                      "QPushButton{background-color:rgb(255, 78, 116)}"
-                                      "QPushButton{border:2px}"
-                                      "QPushButton{border-radius:10px}")
-
     def select_click(self):
         fname = QFileDialog.getOpenFileName(self, 'open file', '/')
         if fname[0]:
