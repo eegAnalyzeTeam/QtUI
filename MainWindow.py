@@ -15,6 +15,7 @@ class MainWindow(QMainWindow):
         self.StopButton.clicked.connect(self.stop_click)
         self.ImageLabel.setPixmap(QPixmap('icon.jpg'))
         self.ImageLabel.setScaledContents(True)
+        self.file = ''
 
         # 样式
         self.SelectButton.setStyleSheet("QPushButton{color:black}"
@@ -37,6 +38,7 @@ class MainWindow(QMainWindow):
         fname = QFileDialog.getOpenFileName(self, 'open file', '/')
         if fname[0]:
             self.FileText.setText(fname[0])
+            self.file = fname[0]
 
     def start_click(self):
         self.ResultView.setPlainText('')
@@ -45,6 +47,10 @@ class MainWindow(QMainWindow):
     def stop_click(self):
         self.ResultView.setPlainText('')
         self.ResultView.setPlainText('停止分析')
+
+    # 获取文件路径
+    def get_file_path(self):
+        return self.file
 
 
 app = QApplication(sys.argv)
